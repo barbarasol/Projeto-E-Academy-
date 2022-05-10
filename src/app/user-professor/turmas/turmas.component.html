@@ -1,0 +1,42 @@
+<br>
+
+<form class="container" [formGroup]="formularioRegistro" (ngSubmit)="onSubmit()" autocomplete="off">
+  <div class="form-group" class="row">
+    <div class="col-md-8">
+      <label for="registro" class="form-label">Informe seu registro:</label>
+      <input type="text" class="form-control" id="registro" placeholder="Registro" formControlName="registro">
+      <div *ngIf="verificarValidTouchedInput('registro')" class="alert alert-danger">
+        Registro é obrigatório.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button id="botaoEnviar" type="submit" class="btn btn-primary" >Enviar</button>
+  <button  class="btn btn-primary" (click)="resetarFormulario()">Cancelar</button>
+</form>
+
+<br>
+<br>
+<h5>Suas Turmas:</h5>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Semestre</th>
+      <th scope="col">Carga Horaria</th>
+      <th scope="col">Periodo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let turma of turmasProfessor">
+      <th scope="row">{{turma.nome}}</th>
+      <td>{{turma.semestre}}</td>
+      <td>{{turma.cargaHoraria}}</td>
+      <td>{{turma.periodo}}</td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="verificaSeTurmasDoProfessorEstaVazia()">
+  <p>Você não tem disciplinas cadastradas!!</p>
+</div>

@@ -1,0 +1,56 @@
+<h3>Lançar Notas</h3>
+<br>
+<form class="container" [formGroup]="formularioNotasAlunos" (ngSubmit)="onSubmit()" autocomplete="off">
+  <div class="form-group" class="row">
+    <p>Dados Aluno:</p>
+    <div class="col-md-4">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" placeholder="Nome" formControlName="nome">
+       <div *ngIf="verificarValidTouchedInput('nome')" class="alert alert-danger">
+        Nome é obrigatório.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="sobrenome" class="form-label">Sobrenome</label>
+      <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" formControlName="sobrenome">
+     <div *ngIf="verificarValidTouchedInput('sobrenome')" class="alert alert-danger">
+        Sobrenome é obrigatório.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="matricula" class="form-label">Matricula</label>
+      <input type="text" class="form-control" id="matricula" placeholder="Matricula" formControlName="matricula">
+      <div *ngIf="verificarValidTouchedInput('matricula')" class="alert alert-danger">
+        Matrícula é obrigatório.
+      </div>
+    </div>
+  </div>
+  <br>
+  <p>Dados Nota:</p>
+  <div class="form-group" class="row">
+    <div class="col-md-4">
+      <label for="disciplina" class="form-label">Disciplina</label>
+      <input type="text" class="form-control" id="disciplina" placeholder="Disciplina" formControlName="disciplina">
+      <div *ngIf="verificarValidTouchedInput('disciplina')" class="alert alert-danger">
+        Disciplina é obrigatório.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="atividade" class="form-label">Atividade</label>
+      <input type="text" class="form-control" id="atividade" placeholder="Atividade" formControlName="atividade">
+      <div *ngIf="verificarValidTouchedInput('atividade')" class="alert alert-danger">
+        Atividade é obrigatório.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="nota" class="form-label">Nota</label>
+      <input type="text" class="form-control" id="nota" placeholder="Nota" formControlName="nota">
+      <div *ngIf="verificarValidTouchedInput('nota')" class="alert alert-danger">
+        Nota é obrigatória.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button id="botaoEnviar" type="submit" class="btn btn-primary">Enviar</button>
+  <button class="btn btn-primary" (click)="resetarFormulario()">Cancelar</button>
+</form>

@@ -1,0 +1,13 @@
+[{
+  "id": "1",
+  "tipoUsuario": "administrador"
+},
+{
+  "id": "2",
+  "tipoUsuario": "professor"
+},
+{
+  "id": "3",
+  "tipoUsuario": "aluno"
+}
+]

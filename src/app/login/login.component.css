@@ -1,0 +1,34 @@
+#botaoEnviar{
+  display: block;
+  margin: auto;
+  color: white;
+  background-color: #343434;
+  border: #343434;
+}
+
+#cadastro{
+  position: relative;
+  display: block;
+  text-align: right;
+  color: #343434;
+  text-decoration: none;
+}
+
+#imgLogo{
+  width: 400px;
+  display: block;
+  margin: auto;
+}
+
+h5{
+  margin-top: 15px;
+  text-align: center;
+}
+
+#seta{
+  width: 50px;
+  position: relative;
+  display: flex;
+  float: right;
+  
+}

@@ -1,0 +1,42 @@
+<br>
+
+<form class="container" [formGroup]="formularioInformaMatricula" (ngSubmit)="onSubmit()" autocomplete="off">
+  <div class="form-group" class="row">
+    <div class="col-md-8">
+      <label for="matricula" class="form-label">Informe sua matricula:</label>
+      <input type="text" class="form-control" id="matricula" placeholder="Matricula" formControlName="matricula">
+      <div *ngIf="verificarValidTouchedInput('matricula')" class="alert alert-danger">
+        Matricula é obrigatório.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button id="botaoEnviar" type="submit" class="btn btn-primary" >Enviar</button>
+  <button class="btn btn-primary" (click)="resetarFormulario()">Cancelar</button>
+</form>
+<br>
+<br>
+<h5>Histórico de Faltas:</h5>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Sobrenome</th>
+      <th scope="col">Disciplina</th>
+      <th scope="col">Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let falta of faltasDoAluno">
+      <th scope="row">{{falta.nome}}</th>
+      <td>{{falta.sobrenome}}</td>
+      <td>{{falta.nomeDisciplina}}</td>
+      <td>{{falta.dataFalta}}</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<div *ngIf="verificaSeAlunoTemFaltas()">
+  <p>Você não tem faltas lançadas!!</p>
+</div>

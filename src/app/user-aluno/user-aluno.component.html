@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <img id="logo" src="/assets/logo.png">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page"  [routerLink]="['/mostrar-disciplinas']">Disciplinas</a>
+        </li>
+        <li class="nav-item">
+           <a class="nav-link active" [routerLink]="['/mostrar-faltas']">Faltas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/mostrar-notas']">Notas</a>
+       </li>
+      </ul>
+    </div>
+  </div>
+  <div><a class="nav-link active" [routerLink]="['/login']" id="linkSair">Sair</a></div>
+  <img id="sair" src="/assets/sair.png" >
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

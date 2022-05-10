@@ -1,0 +1,50 @@
+#quemSomos{
+  width: 450px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#eAcademy{
+  text-align: center;
+  color: #eab953
+}
+
+h4{
+  text-align: center;
+}
+
+img{
+  width: 300px;
+  height: 300px;
+}
+
+#corpo{
+  display: flex;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+#container{
+  margin: auto;
+  margin-left: 30px;
+  width: 400px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+#container img{
+  display: flex;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#container h5{
+  text-align: center;
+  margin-top: 5px;
+}
+
+#container p{
+  text-align: center;
+}

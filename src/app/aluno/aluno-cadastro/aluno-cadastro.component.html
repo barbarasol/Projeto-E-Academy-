@@ -1,0 +1,50 @@
+<form class="container" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <div class="form-group" class="row">
+    <div class="col-md-6">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" placeholder="Nome" formControlName="nome">
+      <div *ngIf="verificarValidTouchedInput('nome')" class="alert alert-danger">
+        Nome é obrigatório.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="sobrenome" class="form-label">Sobrenome</label>
+      <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" formControlName="sobrenome">
+      <div *ngIf="verificarValidTouchedInput('sobrenome')" class="alert alert-danger">
+        Sobrenome é obrigatório.
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="form-group" class="row">
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+      <div *ngIf="verificarValidTouchedInput('email')" class="alert alert-danger">
+        Email é obrigatório.
+      </div>
+      <div *ngIf="verificaEmailInvalido()" class="alert alert-danger">
+        Formato do email inválido.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="matricula" class="form-label">Matricula</label>
+      <input type="text" class="form-control" id="matricula" placeholder="Matricula" formControlName="matricula">
+      <div *ngIf="verificarValidTouchedInput('matricula')" class="alert alert-danger">
+        Matricula é obrigatório.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="sobrenome" class="form-label">Semestre</label>
+      <input type="text" class="form-control" id="semestre" placeholder="Semestre" formControlName="semestre">
+      <div *ngIf="verificarValidTouchedInput('semestre')" class="alert alert-danger">
+        Semestre é obrigatório.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary" id="btnSubmit">Enviar</button>
+  <button (click)="resetar()" class="btn btn-secondary">Cancelar</button>
+</form>
+
+

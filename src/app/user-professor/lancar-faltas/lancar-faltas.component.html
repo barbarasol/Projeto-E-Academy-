@@ -1,0 +1,82 @@
+<br>
+<form class="container" [formGroup]="formularioInformaDisciplina" (ngSubmit)="onSubmit()" autocomplete="off">
+  <div class="form-group" class="row">
+    <div class="col-md-6">
+      <label for="nome" class="form-label">Informe a disciplina:</label>
+      <input type="text" class="form-control" id="nome" placeholder="Nome" formControlName="nome">
+      <div *ngIf="verificarValidTouchedInputDisciplina('nome')" class="alert alert-danger">
+        Nome da disciplina é obrigatório.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="nomeProfessor" class="form-label">Informe seu nome:</label>
+      <input type="text" class="form-control" id="nomeProfessor" placeholder="Nome" formControlName="nomeProfessor">
+      <div *ngIf="verificarValidTouchedInputDisciplina('nomeProfessor')" class="alert alert-danger">
+        Nome do professor é obrigatório.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button id="botaoEnviar" type="submit" class="btn btn-primary" >Enviar</button>
+  <button class="btn btn-primary" (click)="resetarFormulario()"> Cancelar</button>
+</form>
+<br>
+<h4>Alunos da Disciplina:</h4>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Sobrenome</th>
+      <th scope="col">Matricula</th>
+      <th scope="col">Semestre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let aluno of alunosDaDisciplina">
+      <th scope="row">{{aluno.nome}}</th>
+      <td>{{aluno.sobrenome}}</td>
+      <td>{{aluno.matricula}}</td>
+      <td>{{aluno.semestre}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<H4>Informe o aluno que deseja lançar a falta:</H4>
+<br>
+<form class="container" [formGroup]="formularioFaltaAluno" (ngSubmit)="submitFormularioFalta()" autocomplete="off">
+  <div class="form-group" class="row">
+    <div class="col-md-3">
+      <label for="nome" class="form-label">Nome:</label>
+      <input type="text" class="form-control" id="nome" placeholder="Nome" formControlName="nome">
+      <div *ngIf="verificarValidTouchedInputFalta('nome')" class="alert alert-danger">
+        Nome é obrigatório.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="sobrenome" class="form-label">Sobrenome:</label>
+      <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" formControlName="sobrenome">
+      <div *ngIf="verificarValidTouchedInputFalta('sobrenome')" class="alert alert-danger">
+        Sobrenome é obrigatório.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="matricula" class="form-label">Matricula:</label>
+      <input type="text" class="form-control" id="matricula" placeholder="Matricula" formControlName="matricula">
+      <div *ngIf="verificarValidTouchedInputFalta('matricula')" class="alert alert-danger">
+        Matricula é obrigatório.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="dataFalta" class="form-label">Data da Falta:</label>
+      <input type="text" class="form-control" id="dataFalta" placeholder="00/00/0000" formControlName="dataFalta">
+      <div *ngIf="verificarValidTouchedInputFalta('dataFalta')" class="alert alert-danger">
+        Data da Falta é obrigatório.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button id="botaoEnviar" type="submit" class="btn btn-primary" >Lançar</button>
+  <button class="btn btn-primary" (click)="resetarFormularioFalta()">Cancelar</button>
+</form>

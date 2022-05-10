@@ -1,0 +1,48 @@
+<h3>Notas:</h3>
+<br>
+<form class="container" [formGroup]="formularioMatricula" (ngSubmit)="onSubmit()" autocomplete="off">
+  <div class="form-group" class="row">
+    <div class="col-md-6">
+      <label for="matricula" class="form-label">Informe sua matricula:</label>
+      <input type="text" class="form-control" id="matricula" placeholder="Matricula" formControlName="matricula">
+      <div *ngIf="verificaValidTouchedInput('matricula')" class="alert alert-danger">
+        Usuario é obrigatório.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="disciplina" class="form-label">Informe a disciplina:</label>
+      <input type="text" class="form-control" id="disciplina" placeholder="Disciplina" formControlName="disciplina">
+      <div *ngIf="verificaValidTouchedInput('disciplina')" class="alert alert-danger">
+        Disciplina é obrigatório.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button id="botaoEnviar" type="submit" class="btn btn-primary" >Enviar</button>
+  <button class="btn btn-primary" (click)="resetarFormulario()">Cancelar</button>
+</form>
+<br>
+<br>
+<h4>Suas Notas:</h4>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Sobrenome</th>
+      <th scope="col">Disciplina</th>
+      <th scope="col">Atividade</th>
+      <th scope="col">Nota</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let nota of notasAlunoNaDisciplina">
+      <th scope="row">{{nota.nome}}</th>
+      <td>{{nota.sobrenome}}</td>
+      <td>{{nota.disciplina}}</td>
+      <td>{{nota.atividade}}</td>
+      <td>{{nota.nota}}</td>
+    </tr>
+  </tbody>
+</table>
+

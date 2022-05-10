@@ -1,0 +1,25 @@
+
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Matrícula</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Sobrenome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Semestre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let aluno of alunos">
+      <th scope="row">{{aluno.matricula}}</th>
+      <td>{{aluno.nome}}</td>
+      <td>{{aluno.sobrenome}}</td>
+      <td>{{aluno.email}}</td>
+      <td>{{aluno.semestre}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+

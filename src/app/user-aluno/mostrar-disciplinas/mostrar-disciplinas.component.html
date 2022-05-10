@@ -1,0 +1,38 @@
+<br>
+
+<form class="container" [formGroup]="formularioInformaSemestre" (ngSubmit)="onSubmit()" autocomplete="off">
+  <div class="form-group" class="row">
+    <div class="col-md-8">
+      <label for="semestre" class="form-label">Informe seu semestre:</label>
+      <input type="text" class="form-control" id="semestre" placeholder="Semestre" formControlName="semestre">
+      <div *ngIf="verificaValidTouchedInput('semestre')" class="alert alert-danger">
+        Semestre é obrigatório.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button id="botaoEnviar" type="submit" class="btn btn-primary" >Enviar</button>
+  <button class="btn btn-primary" (click)="resetarFormulario()">Cancelar</button>
+
+</form>
+<br>
+<br>
+<h5>Suas Disciplinas:</h5>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Semestre</th>
+      <th scope="col">Carga Horaria</th>
+      <th scope="col">Periodo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let disciplina of disciplinasDoSemestre">
+      <th scope="row">{{disciplina.nome}}</th>
+      <td>{{disciplina.semestre}}</td>
+      <td>{{disciplina.cargaHoraria}}</td>
+      <td>{{disciplina.periodo}}</td>
+    </tr>
+  </tbody>
+</table>

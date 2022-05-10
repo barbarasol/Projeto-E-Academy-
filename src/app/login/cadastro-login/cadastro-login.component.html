@@ -1,0 +1,65 @@
+<br>
+<img id="imgLogo" src="/assets/logo.png">
+<h5>Cadastro</h5>
+<br>
+<form class="container" [formGroup]="formularioCadastroLogin" (ngSubmit)="onSubmit()" autocomplete="off">
+  <div class="form-group" class="row">
+    <div class="col-md-12">
+      <label for="usuario" class="form-label">Usuario</label>
+      <input type="text" class="form-control" id="usuario" placeholder="Usuario" formControlName="usuario">
+      <div *ngIf="verificarValidTouchedInput('usuario')" class="alert alert-danger">
+        Usuario é obrigatório.
+      </div>
+    </div>
+    </div>
+    <br>
+    <div>
+      <label for="tipoUsuario">Tipo de Usuário</label>
+      <select class="form-select" aria-label="Default select example" formControlName="tipoUsuario">
+        <option *ngFor="let usuario of tiposUsuarios" [value]="usuario.tipoUsuario" >{{ usuario.tipoUsuario }}</option>
+      </select>
+      <div *ngIf="verificarValidTouchedInput('tipoUsuario')" class="alert alert-danger">
+        Tipo usuario é obrigatório.
+      </div>
+    </div>
+    <br>
+    <div class="form-group" class="row">
+      <div class="col-md-12">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="senha" placeholder="Senha" formControlName="senha">
+        <div *ngIf="verificarValidTouchedInput('senha')" class="alert alert-danger">
+          Senha é obrigatório.
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group" class="row">
+      <div class="col-md-4">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" placeholder="Nome" formControlName="nome">
+        <div *ngIf="verificarValidTouchedInput('nome')" class="alert alert-danger">
+          Nome é obrigatório.
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="sobrenome" class="form-label">Sobrenome</label>
+        <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" formControlName="sobrenome">
+        <div *ngIf="verificarValidTouchedInput('sobrenome')" class="alert alert-danger">
+          Sobrenome é obrigatório.
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="registro" class="form-label">Registro</label>
+        <input type="text" class="form-control" id="registro" placeholder="Registro" formControlName="registro">
+        <div *ngIf="verificarValidTouchedInput('registro')" class="alert alert-danger">
+          Registro é obrigatório.
+        </div>
+      </div>
+    </div>
+    <br>
+    <button id="botaoEnviar" type="submit" class="btn btn-primary">Submit</button>
+    <img id="seta" src="/assets/seta.png">
+    <a [routerLink]="['/login']" id="btnLogin">Login</a>
+</form>
+<br>
+

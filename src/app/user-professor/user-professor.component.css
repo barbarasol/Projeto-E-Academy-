@@ -1,0 +1,18 @@
+#logo{
+  width: 190px;
+  margin-right: 40px;
+}
+
+a:hover{
+  text-decoration: overline;
+}
+
+#sair{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+#linkSair{
+  color: #343434
+}

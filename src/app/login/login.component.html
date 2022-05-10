@@ -1,0 +1,40 @@
+  <br>
+  <img id="imgLogo" src="/assets/logo.png">
+  <h5>Login</h5>
+  <br>
+  <form class="container" [formGroup]="formularioLogin" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="form-group" class="row">
+      <div class="col-md-12">
+        <label for="usuario" class="form-label">Usuario</label>
+        <input type="text" class="form-control" id="usuario" placeholder="Usuario" formControlName="usuario">
+        <div *ngIf="verificarValidTouchedInput('usuario')" class="alert alert-danger">
+          Usuario é obrigatório.
+        </div>
+      </div>
+      </div>
+      <br>
+      <div>
+        <label for="tipoUsuario">Tipo de Usuário</label>
+        <select class="form-select" aria-label="Default select example" formControlName="tipoUsuario">
+          <option *ngFor="let usuario of tiposUsuarios" [value]="usuario.tipoUsuario" >{{ usuario.tipoUsuario }}</option>
+        </select>
+        <div *ngIf="verificarValidTouchedInput('tipoUsuario')" class="alert alert-danger">
+          Tipo usuario é obrigatório.
+        </div>
+      </div>
+      <br>
+      <div class="form-group" class="row">
+        <div class="col-md-12">
+          <label for="senha" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="senha" placeholder="Senha" formControlName="senha">
+          <div *ngIf="verificarValidTouchedInput('senha')" class="alert alert-danger">
+            Senha é obrigatório.
+          </div>
+        </div>
+      </div>
+      <br>
+      <button id="botaoEnviar" type="submit" class="btn btn-primary">Submit</button>
+      <img id="seta" src="/assets/seta.png">
+      <a id="cadastro" [routerLink]="['cadastroLogin']">Cadastre-se</a>
+  </form>
+

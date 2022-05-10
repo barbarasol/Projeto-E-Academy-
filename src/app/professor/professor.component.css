@@ -1,0 +1,16 @@
+#btn{
+  text-align: center;
+}
+
+#bt1{
+  margin-right: 15px;
+}
+
+button{
+  background-color: #343434;
+  border: #343434;
+}
+
+button:hover{
+  background-color:rgb(132, 135, 138);
+}

@@ -1,0 +1,60 @@
+<br>
+<h5>Disciplinas Disponíveis</h5>
+
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Semestre</th>
+      <th scope="col">Carga Horaria</th>
+      <th scope="col">Periodo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let disciplina of disciplinasDisponiveis">
+      <th scope="row">{{disciplina.nome}}</th>
+      <td>{{disciplina.semestre}}</td>
+      <td>{{disciplina.cargaHoraria}}</td>
+      <td>{{disciplina.periodo}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<H5>Informe a disciplina que deseja se increver:</H5>
+<br>
+<form class="container" [formGroup]="formularioInscricaoDisciplina" (ngSubmit)="onSubmit()" autocomplete="off">
+  <div class="form-group" class="row">
+    <div class="col-md-6">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" placeholder="Nome" formControlName="nome">
+      <div *ngIf="verificarValidTouchedInput('nome')" class="alert alert-danger">
+        Nome é obrigatório.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="semestre" class="form-label">Semestre</label>
+      <input type="text" class="form-control" id="semestre" placeholder="Semestre" formControlName="semestre">
+      <div *ngIf="verificarValidTouchedInput('semestre')" class="alert alert-danger">
+        Semestre é obrigatório.
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="form-group" class="row">
+    <div class="col-md-12">
+      <label for="registro" class="form-label">Informe seu registro:</label>
+      <input type="text" class="form-control" id="registro" placeholder="Registro" formControlName="registro">
+      <div *ngIf="verificarValidTouchedInput('registro')" class="alert alert-danger">
+        Registro é obrigatório.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button id="botaoEnviar" type="submit" class="btn btn-primary" >Enviar</button>
+  <button id="botaoCancelar" class="btn btn-primary" (click)="resetarFormulario()">Cancelar</button>
+  <br>
+  <br>
+  <br>
+</form>

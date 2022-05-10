@@ -1,0 +1,14 @@
+
+#btn2{
+  position: relative;
+  margin-left: 15px;
+}
+
+button{
+  background-color: #343434;
+  border: #343434;
+}
+
+button:hover{
+  background-color:rgb(132, 135, 138);
+}
